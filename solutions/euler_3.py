@@ -16,7 +16,7 @@ def is_prime_number(num: int) -> bool:
     return True
     
 def main():
-    target: int = 231950000 # 600851475143
+    target: int =  600851475143
     
     for i in reversed(range(2,target//2)):
         if target % i == 0:
