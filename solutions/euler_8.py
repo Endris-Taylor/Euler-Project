@@ -60,7 +60,7 @@ def main():
     substrings = []
     products = []
     
-    for count in range(0,limit + 1):
+    for _, count in enumerate(range(0,limit + 1)):
         substring: str = _series[count : count + _adjacent_digits]
         substring_list: list[int]  = [int(x) for x in substring]
         substring_product = prod(substring_list)

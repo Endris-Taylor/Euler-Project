@@ -18,7 +18,7 @@ def main():
     difference = natural_sum_squared = square_sum = 0
     statement: str = ''
     
-    for number in range(0,20):
+    for _, number in enumerate(range(0,100)):
         current_number: int = number + 1
         natural_numbers.append(current_number)
         square_numbers.append(current_number ** 2)

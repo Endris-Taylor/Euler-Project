@@ -10,7 +10,7 @@ What is the smallest positive number that is evenly divisible by all of the numb
 def smallest_multiple(number: int = 0) -> bool:
     multiple: bool = True
     
-    for num in range(2,20):
+    for _, num in enumerate(range(2,20)):
         if (number % num != 0):
             multiple = False
             break;
