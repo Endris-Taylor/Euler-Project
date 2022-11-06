@@ -25,7 +25,8 @@ The four adjacent digits in the 1000-digit number that have the greatest product
 05886116467109405077541002256983155200055935729725
 71636269561882670428252483600823257530420752963450
 
-Find the thirteen adjacent digits in the 1000-digit number that have the greatest product. What is the value of this product?
+Find the thirteen adjacent digits in the 1000-digit number that have the greatest product.
+What is the value of this product?
 """
 
 from math import prod
@@ -60,9 +61,9 @@ def main():
     substrings = []
     products = []
     
-    for _, count in enumerate(range(0,limit + 1)):
-        substring: str = _series[count : count + _adjacent_digits]
-        substring_list: list[int]  = [int(x) for x in substring]
+    for _, count in enumerate(range(0, limit + 1)):
+        substring: str = _series[count: count + _adjacent_digits]
+        substring_list: list[int] = [int(x) for x in substring]
         substring_product = prod(substring_list)
         
         substrings.append(substring)
@@ -74,8 +75,10 @@ def main():
         max_substring = substrings[max_value_index]
         
         equation = " * ".join(str(max_substring))
-        
-        print(f"The {_adjacent_digits} adjacent digits in the 1000-digit number that have the greatest product are {equation} = {max_value}.")
+
+        output: str = f"The {_adjacent_digits} adjacent digits in the 1000-digit number that have the greatest " + \
+                      f"product are {equation} = {max_value}."
+        print(output)
     
 
 if __name__ == "__main__":

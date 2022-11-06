@@ -32,9 +32,7 @@ What is the greatest product of four adjacent numbers in the same direction (up,
 
 import operator
 
-def process_sub_grid():
-    pass
-    
+
 def main() -> None:
     # Construct the grid.
     _grid = [[8,49,81,52,22,24,32,67,24,21,78,16,86,19,4,88,4,20,20,1],
@@ -65,9 +63,9 @@ def main() -> None:
             print("{:02d}".format(_grid[x][y]), end=" ")
             
             if (x <= 16) and (y <= 16):
-                # Row - > Top, Middle, Thrid, Forth
-                top_row = _grid[x][y] * _grid[x +1 ][y] * _grid[x + 2][y] * _grid[x + 3][y]
-                top_row_equation: str = f"{_grid[x][y]} * {_grid[x +1 ][y]} * {_grid[x + 2][y]} " + \
+                # Row - > Top, Middle, Third, Forth
+                top_row = _grid[x][y] * _grid[x + 1][y] * _grid[x + 2][y] * _grid[x + 3][y]
+                top_row_equation: str = f"{_grid[x][y]} * {_grid[x + 1][y]} * {_grid[x + 2][y]} " + \
                     f"* {_grid[x + 3][y]}"
                 if top_row != 0 and top_row_equation not in results:
                     results[top_row_equation] = top_row
@@ -125,8 +123,9 @@ def main() -> None:
             
     maximum_equation: str = max(results.items(), key=operator.itemgetter(1))[0]
     maximum: int = results.get(maximum_equation)
-    print(f"\n\nThe greatest product of four adjacent numbers in the same direction " + \
-        f"up, down, left, right, or diagonally) in the 20 * 20 grid is {maximum_equation} = {maximum}")
+    output: str = f"\n\nThe greatest product of four adjacent numbers in the same direction " + \
+                  f"up, down, left, right, or diagonally) in the 20 * 20 grid is {maximum_equation} = {maximum}"
+    print(output)
         
         
 if __name__ == "__main__":

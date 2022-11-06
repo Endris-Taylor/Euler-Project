@@ -11,7 +11,7 @@ By considering the terms in the Fibonacci sequence whose values do not exceed fo
 
 def main():
     count: int = 0
-    fibonacci_list: list(int) = [0,1]
+    fibonacci_list: list(int) = [0, 1]
     even_fibonacci_list: list(int) = []
     max_number: int = 400000
     even_fibonacci_sum: int = None

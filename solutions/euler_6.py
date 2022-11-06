@@ -18,7 +18,7 @@ def main():
     difference = natural_sum_squared = square_sum = 0
     statement: str = ''
     
-    for _, number in enumerate(range(0,100)):
+    for _, number in enumerate(range(0, 100)):
         current_number: int = number + 1
         natural_numbers.append(current_number)
         square_numbers.append(current_number ** 2)
@@ -28,7 +28,7 @@ def main():
         natural_sum_squared = natural_sum ** 2
         square_sum = sum(square_numbers)
 
-        difference =  natural_sum_squared - square_sum
+        difference = natural_sum_squared - square_sum
         
         statement = "The difference between the sum of the squares of the first one hundred natural numbers and the " + \
             f"square of the sum ia {natural_sum_squared} - {square_sum} = {difference}."

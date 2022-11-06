@@ -19,6 +19,7 @@ def main():
         sum_of_integers = sum(multiples)
         print(f"The sum of all the multiples of 3 or 5 below 1000 is {sum_of_integers}")
 
+
 if __name__ == "__main__":
     main()
     

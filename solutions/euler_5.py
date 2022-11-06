@@ -7,15 +7,17 @@ Smallest multiple
 What is the smallest positive number that is evenly divisible by all of the numbers from 1 to 20?
 """
 
+
 def smallest_multiple(number: int = 0) -> bool:
     multiple: bool = True
     
-    for _, num in enumerate(range(2,20)):
-        if (number % num != 0):
+    for _, num in enumerate(range(2, 20)):
+        if number % num != 0:
             multiple = False
-            break;
+            break
     
     return multiple
+
 
 def main():
     smallest_positive: int = 21
@@ -27,7 +29,9 @@ def main():
         if not found:
             smallest_positive += 1
     else:
-        print(f"The smallest positive number that is evenly divisible by all of the numbers from 1 to 20 is {smallest_positive}")
+        output: str = "The smallest positive number that is evenly divisible by all " + \
+                      f"of the numbers from 1 to 20 is {smallest_positive}"
+        print(output)
 
 
 if __name__ == "__main__":
