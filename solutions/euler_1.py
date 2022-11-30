@@ -12,8 +12,8 @@ def main():
     multiples: list(int) = []
     sum_of_integers: int = None
     
-    for integer in range(1,1000):
-        if (integer%3 == 0) or (integer%5 == 0):
+    for _, integer in enumerate(range(1, 1000)):
+        if (integer % 3 == 0) or (integer % 5 == 0):
             multiples.append(integer)
     else:
         sum_of_integers = sum(multiples)
