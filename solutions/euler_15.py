@@ -8,13 +8,7 @@ How many such routes are there through a 20×20 grid?
 """
 
 
-def factorial(number: int) -> int:
-    result: int = 1
-
-    for _, num in enumerate(range(1, number + 1)):
-        result *= num
-
-    return result
+from common import factorial
 
 
 def main() -> None:
