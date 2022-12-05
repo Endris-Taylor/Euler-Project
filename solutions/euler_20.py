@@ -14,7 +14,7 @@ from common import factorial
 
 def main() -> None:
     target: int = 100
-    sum_of_digits: int = sum([int(i) for i in str(factorial(target))])
+    sum_of_digits: int = sum([int(digit) for digit in str(factorial(target))])
 
     print(f"The sum of the digits in the number {target} is {sum_of_digits}")
 

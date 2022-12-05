@@ -9,16 +9,18 @@ What is the largest prime factor of the number 600851475143?
 
 from math import sqrt
 
+
 def is_prime_number(num: int) -> bool:
     for _, i in enumerate(range(2, int(sqrt(num)) + 1)):
         if (num % i) == 0:
             return False
     return True
-    
+
+
 def main():
-    target: int =  600851475143
+    target: int = 600851475143
     
-    for i in reversed(range(2,target//2)):
+    for i in reversed(range(2, target//2)):
         if target % i == 0:
             if is_prime_number(i):
                 print(f"Largest Prime Factor of the number {target} is {i}")
