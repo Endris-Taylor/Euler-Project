@@ -12,8 +12,11 @@ The proper divisors of 284 are 1, 2, 4, 71 and 142; so d(284) = 220.
 Evaluate the sum of all the amicable numbers under 10000."""
 
 
+from __future__ import annotations  # For Type Hints.
+
+
 def get_sum_of_divisors(number: int, even: bool = True) -> int:
-    divisors: 'list[int]' = []
+    divisors: list[int] = []
     sum_of_divisors: int = 0
 
     for _, potential in enumerate(range(1, number)):
@@ -33,7 +36,7 @@ def get_sum_of_divisors(number: int, even: bool = True) -> int:
 
 def main() -> None:
     target_number: int = 10000
-    amicable_numbers: 'list[int]' = []
+    amicable_numbers: list[int] = []
     sum_of_amicable_numbers: int = 0
 
     for _, num in enumerate(range(1, target_number)):

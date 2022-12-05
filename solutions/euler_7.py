@@ -10,6 +10,7 @@ What is the 10 001st prime number?
 
 from math import sqrt
 
+
 def is_prime_number(num: int) -> bool:
     for _, i in enumerate(range(2, int(sqrt(num)) + 1)):
         if (num % i) == 0:

@@ -9,10 +9,11 @@ For example, when the list is sorted into alphabetical order, COLIN, which is wo
 
 What is the total of all the name scores in the file?"""
 
+from __future__ import annotations  # For Type Hints.
 from string import ascii_uppercase
 
 
-_ALPHABET: 'list[str]' = [letter for letter in ascii_uppercase]
+_ALPHABET: list[str] = [letter for letter in ascii_uppercase]
 
 
 def get_letter_position(letter: str) -> int:
@@ -23,7 +24,7 @@ def get_letter_position(letter: str) -> int:
 
 
 def get_name_score(index: int, name: str) -> int:
-    values: 'list[int]' = []
+    values: list[int] = []
 
     for letter in name:
         values.append(get_letter_position(letter))
@@ -33,8 +34,8 @@ def get_name_score(index: int, name: str) -> int:
 
 def main() -> None:
     path_to_file: str = './resources/p022_names.txt'
-    names: 'list[str]' = []
-    scores: 'list[int]' = []
+    names: list[str] = []
+    scores: list[int] = []
     name_scores_total: int = 0
 
     # Load names from file then close it.

@@ -11,10 +11,10 @@ Hence the difference between the sum of the squares of the first ten natural num
 Find the difference between the sum of the squares of the first one hundred natural numbers and the square of the sum.
 """
 
-natural_numbers = []
-square_numbers = []
 
 def main():
+    natural_numbers = []
+    square_numbers = []
     difference = natural_sum_squared = square_sum = 0
     statement: str = ''
     
