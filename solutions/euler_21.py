@@ -14,18 +14,17 @@ Evaluate the sum of all the amicable numbers under 10000."""
 
 from __future__ import annotations  # For Type Hints.
 
+from common import get_divisors
 
-def get_sum_of_divisors(number: int, even: bool = True) -> int:
-    divisors: list[int] = []
+
+def get_sum_of_divisors(number: int) -> int:
+    divisors: list[int] = list(get_divisors(number))
     sum_of_divisors: int = 0
 
+    """ Test ... 
     for _, potential in enumerate(range(1, number)):
-        if even:
-            if number % potential == 0:
-                divisors.append(potential)
-        else:
-            if number % potential == 0:
-                divisors.append(potential)
+        if number % potential == 0:
+            divisors.append(potential)"""
 
     if len(divisors) > 0:
         sum_of_divisors = sum(divisors)
