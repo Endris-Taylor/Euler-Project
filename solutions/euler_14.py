@@ -16,9 +16,9 @@ Which starting number, under one million, produces the longest chain?
 
 NOTE: Once the chain starts the terms are allowed to go above one million.
 """
-
-
 from __future__ import annotations  # For Type Hints.
+
+from textwrap import fill
 
 
 def process_even_number(num: int):
@@ -33,6 +33,8 @@ def main():
     
     num_limit: int = 1000000
     maximum: list[int] = []
+    longest_chain: int = 0
+    longest_chain_str: str = None
     
     for _, number in enumerate(range(num_limit, 0, -1)):
         current_number = number
@@ -48,15 +50,15 @@ def main():
             
             current_sequence.append(temp)
             current_number = temp
- 
-        else:
-            current_sequence.append(current_number)
             
         if len(current_sequence) > len(maximum):
             maximum = current_sequence
-        # print(f"Max is: {maximum[0]}")
-    else:
-        pass
+
+    longest_chain = maximum[0]
+    longest_chain_str = ' -> '.join([str(x) for _, x in enumerate(maximum)])
+    print(f'The starting number, under one million, that produces the longest chain is {longest_chain}.')
+    print('The chain is as follows: ')
+    print(fill(longest_chain_str, 160))
 
 
 if __name__ == "__main__":
