@@ -84,10 +84,10 @@ def main() -> None:
                     results[third_row_equation] = third_row
 
                 bottom_row = _grid[x][y + 3] * _grid[x + 1][y + 3] * _grid[x + 2][y + 3] * _grid[x + 3][y + 3]
-                bottom_row_euqation: str = f"{_grid[x][y + 3]} * {_grid[x + 1][y + 3]} *" + \
+                bottom_row_equation: str = f"{_grid[x][y + 3]} * {_grid[x + 1][y + 3]} *" + \
                                            f" {_grid[x + 2][y + 3]} * {_grid[x + 3][y + 3]}"
-                if bottom_row != 0 and bottom_row_euqation not in results:
-                    results[bottom_row_euqation] = bottom_row
+                if bottom_row != 0 and bottom_row_equation not in results:
+                    results[bottom_row_equation] = bottom_row
 
                 # Column L->R 1-4
                 left_column = _grid[x][y] * _grid[x][y + 1] * _grid[x][y + 2] * _grid[x][y + 3]
