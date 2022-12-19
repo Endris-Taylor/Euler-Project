@@ -21,6 +21,9 @@ What is the value of the first triangle number to have over five hundred divisor
 """
 
 
+from __future__ import annotations
+
+
 def get_factors(num: int) -> list:
     factors: list[int] = []
 
@@ -38,21 +41,16 @@ def main():
     number_found: int = None
     triangle_total: int = 0
 
-    # TODO: Tracking triangles?
     for _, number in enumerate(range(1, num_limit)):
         triangle_total += number
         temp = get_factors(num=number)
-        # results.update({number: temp})
         results[number] = temp
 
         if len(temp) >= divisor_limit or number == num_limit:
             number_found = number
             break
-        else:
-            print(f"Not {number}")
-    else:
-        print(f"The first triangle number to have over five hundred divisors is {number_found}.\n")
-        # print(f"{number_found}: {results[number_found]}")
+
+    print(f"The first triangle number to have over five hundred divisors is {number_found}.\n")
 
 
 if __name__ == "__main__":
