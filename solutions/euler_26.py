@@ -23,39 +23,36 @@ Find the value of d < 1000 for which 1/d contains the longest recurring cycle in
 from __future__ import annotations, division
 
 
-def calculate_sequence_length(number: int) -> int:
-    remainders_found: dict[int, int] = {}
+def calculate_sequence_length(number: int) -> tuple[int, list[int]]:
+    remainders: list[int] = []
+    position = quotient = 0
     value: int = 1
-    sequence_length: int = 0
 
-    for _, position in enumerate(range(1, number)):
+    while value is not 0:
         value *= 10
-        quotient, remainder = divmod(value, number)
+        quotient = value // number
+        value %= number
 
-        # No Recurring Remainder.
-        if remainder == 0:
-            break
+        if quotient in remainders:
+            break  # Where we would add the
 
-        # Recurring digit found in remainder.
-        elif (found_position := remainders_found.get(quotient, None)) is not None:
-            sequence_length = position - found_position
-            break
+        remainders.insert(position, quotient)
+        position += 1
 
-        # Still processing.
-        else:
-            value = remainder
-            remainders_found[quotient] = position
-
-    return sequence_length
+    return len(remainders), remainders
 
 
 def main() -> None:
-    _start: int = 9
+    _start: int = 7
     _target: int = 1000
     sequence_lengths: dict[int, int] = {}
 
-    for _, denominator in enumerate(range(_start, _target)):
-        sequence_lengths[denominator] = calculate_sequence_length(denominator)  # Add to container Data Structure.
+    for _, denominator in enumerate(range(_start, _target, 2)):
+        if denominator % 5 == 0:
+            continue
+        else:
+            # Add to container Data Structure.
+            sequence_lengths[denominator], _ = calculate_sequence_length(denominator)
 
     max_value = max(sequence_lengths, key=sequence_lengths.get)  # Find the maximum
 
