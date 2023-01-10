@@ -25,25 +25,26 @@ from __future__ import annotations, division
 
 def calculate_sequence_length(number: int) -> tuple[int, list[int]]:
     remainders: list[int] = []
-    position = quotient = 0
-    value: int = 1
+    dividend: int = 10
+    remainder: int = 1
+    quotient: int = 1
 
-    while value is not 0:
-        value *= 10
-        quotient = value // number
-        value %= number
+    while remainder != 0:
 
-        if quotient in remainders:
-            break  # Where we would add the
+        quotient = dividend // number
+        remainder = dividend % number
+        if quotient not in remainders:
+            remainders.append(quotient)
+        else:
+            break
 
-        remainders.insert(position, quotient)
-        position += 1
+        dividend = remainder * 10
 
     return len(remainders), remainders
 
 
 def main() -> None:
-    _start: int = 7
+    _start: int = 9
     _target: int = 1000
     sequence_lengths: dict[int, int] = {}
 
@@ -52,6 +53,7 @@ def main() -> None:
             continue
         else:
             # Add to container Data Structure.
+            # TODO - EXTRA make sure this works first
             sequence_lengths[denominator], _ = calculate_sequence_length(denominator)
 
     max_value = max(sequence_lengths, key=sequence_lengths.get)  # Find the maximum
